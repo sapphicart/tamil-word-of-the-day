@@ -1,0 +1,24 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Tamil Wotd</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body class="font-serif leading-normal tracking-normal bg-black">
+		<div class="container mx-auto">
+			<section class="flex items-center justify-center pt-8 md:h-full text-royal-rose">
+				<h1 class="font-sans lg:text-4xl md:text-xl sm:text-lg"><a href="{% url 'words' %}" class="transition duration-300 ease-in-out delay-150 hover:text-white">tamil wotd</a></h1>
+			</section>
+		</div>
+		<div class="container mx-auto text-royal-rose">
+			<section class="flex items-center justify-center">
+				{% block content %}{% endblock %}
+			</section>
+		</div>
+	</body>
+</html>

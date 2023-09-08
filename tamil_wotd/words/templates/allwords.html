@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static tailwind_tags %}
+
+{% block content %}
+    <div class='px-8 py-20 mt-20'>
+        {% if all_words %}
+            {% for word in all_words %}
+                <h1 class='text-center font-serif lg:text-5xl md:text-3xl pt-4 sm:text-xl'><a href="{% url 'meaning' pk=word.id %}" class="transition duration-300 ease-in-out delay-150 hover:text-white">{{ word.word }}</a></h1>
+            {% endfor %}
+        {% else %}
+            <p>There are no words</p>
+        {% endif %}
+    </div>
+{% endblock %}
+        

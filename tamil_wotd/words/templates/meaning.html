@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static tailwind_tags %}
+
+{% block content %}
+    <div class='px-8 py-20 mt-20'>
+        {% if words_detail %}
+            {% for word in words_detail %}
+                <h1 class='font-serif lg:text-7xl md:text-4xl sm:text-3xl text-center'>{{ word.word }}</h1>
+                <p class='pt-8 font-serif lg:text-2xl md:text-lg sm:text-sm text-center'>{{ word.transliteration }}</p>
+                <p class='pt-20 font-serif lg:text-2xl md:text-lg sm:text-sm text-center'>Meaning: {{ word.meaning }}</p>
+                <p class='pt-4 font-serif lg:text-2xl md:text-lg sm:text-sm text-center'>{{ word.example|linebreaksbr }}</p>
+                <p class='pt-10 font-serif lg:text-2xl md:text-lg sm:text-sm text-center'>{{ word.date }}</p>
+            {% endfor %}
+        {% else %}
+            <p>There are no words</p>
+        {% endif %}
+    </div>
+{% endblock %}
